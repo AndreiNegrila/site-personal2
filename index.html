@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 20px 0;
+    padding: 14px 4px 0 10px;
     position: relative;
     z-index: 2;
   }
@@ -524,6 +524,13 @@
     const now = new Date();
     const h = now.getHours().toString().padStart(2,'0');
     const m = now.getMinutes().toString().padStart(2,'0');
+    document.getElementById('clock').textContent = h + ':' + m;
+  }
+  function updateClock() {
+    const now = new Date();
+    const future = new Date(now.getTime() + 12 * 60 * 60 * 1000);
+    const h = future.getHours().toString().padStart(2,'0');
+    const m = future.getMinutes().toString().padStart(2,'0');
     document.getElementById('clock').textContent = h + ':' + m;
   }
   updateClock();
